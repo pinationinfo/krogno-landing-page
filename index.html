@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krogno - Coming Soon</title>
+    <title>Krogno - Job Application</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -18,6 +18,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            flex-direction: column;
         }
         .container {
             max-width: 600px;
@@ -42,11 +43,31 @@
             border-radius: 5px;
             color: #555;
         }
-        .coming-soon {
-            font-size: 22px;
-            font-weight: bold;
+        .form-container {
+            text-align: left;
             margin-top: 20px;
-            color: #0073e6;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -56,7 +77,25 @@
         <div class="banner">
             Your all-in-one platform for personalized education, whether you're a student, professional, educator, or institution.
         </div>
-        <div class="coming-soon">Coming Soon</div>
+        
+        <h2>Apply for a Job</h2>
+        <div class="form-container">
+            <form action="https://formspree.io/f/mdkavowg" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="resume">Resume (Paste Link)</label>
+                <input type="url" id="resume" name="resume" placeholder="e.g. LinkedIn, Google Drive link" required>
+                
+                <label for="cover">Cover Letter</label>
+                <textarea id="cover" name="cover" rows="4" required></textarea>
+                
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
